@@ -160,7 +160,7 @@ export function TtsConfigPopover() {
               <button
                 onClick={handlePreview}
                 className={cn(
-                  'inline-flex items-center gap-1 rounded-md px-2 py-1 text-[11px] font-medium transition-all shrink-0',
+                  'inline-flex items-center gap-1 rounded-md px-2 py-1 text-xs font-medium transition-all shrink-0',
                   previewing
                     ? 'bg-emerald-100 dark:bg-emerald-900/40 text-emerald-700 dark:text-emerald-300'
                     : 'bg-muted/60 text-muted-foreground hover:bg-muted hover:text-foreground',

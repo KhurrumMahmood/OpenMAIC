@@ -112,9 +112,9 @@ export function SceneSidebar({
       {!collapsed && (
         <div
           onMouseDown={handleDragStart}
-          className="absolute right-0 top-0 bottom-0 w-1.5 cursor-col-resize z-50 group hover:bg-purple-400/30 dark:hover:bg-purple-600/30 active:bg-purple-500/40 dark:active:bg-purple-500/40 transition-colors"
+          className="absolute right-0 top-0 bottom-0 w-1.5 cursor-col-resize z-50 group hover:bg-indigo-400/30 dark:hover:bg-indigo-600/30 active:bg-indigo-500/40 dark:active:bg-indigo-500/40 transition-colors"
         >
-          <div className="absolute right-0.5 top-1/2 -translate-y-1/2 w-0.5 h-8 rounded-full bg-gray-300 dark:bg-gray-600 group-hover:bg-purple-400 dark:group-hover:bg-purple-500 transition-colors" />
+          <div className="absolute right-0.5 top-1/2 -translate-y-1/2 w-0.5 h-8 rounded-full bg-gray-300 dark:bg-gray-600 group-hover:bg-indigo-400 dark:group-hover:bg-indigo-500 transition-colors" />
         </div>
       )}
 
@@ -123,14 +123,14 @@ export function SceneSidebar({
         <div className="h-10 flex items-center justify-between shrink-0 relative mt-3 mb-1 px-3">
           <button
             onClick={() => router.push('/')}
-            className="flex items-center gap-2 cursor-pointer rounded-lg px-1.5 -mx-1.5 py-1 -my-1 hover:bg-gray-100/80 dark:hover:bg-gray-800/60 active:scale-[0.97] transition-all duration-150"
+            className="flex items-center gap-2 cursor-pointer rounded-lg px-1.5 -mx-1.5 py-1 -my-1 hover:bg-gray-100/80 dark:hover:bg-white/[0.04] active:scale-[0.97] transition-all duration-150"
             title={t('generation.backToHome')}
           >
             <img src="/logo-horizontal.png" alt="OpenMAIC" className="h-6" />
           </button>
           <button
             onClick={() => onCollapseChange(true)}
-            className="w-7 h-7 shrink-0 rounded-lg flex items-center justify-center bg-gray-100/80 dark:bg-gray-800/80 text-gray-500 dark:text-gray-400 ring-1 ring-black/[0.04] dark:ring-white/[0.06] hover:bg-gray-200/90 dark:hover:bg-gray-700/90 hover:text-gray-700 dark:hover:text-gray-200 active:scale-90 transition-all duration-200"
+            className="w-7 h-7 shrink-0 rounded-lg flex items-center justify-center bg-gray-100/80 dark:bg-white/[0.03] text-gray-500 dark:text-gray-400 ring-1 ring-black/[0.04] dark:ring-white/[0.06] hover:bg-gray-200/90 dark:hover:bg-gray-700/90 hover:text-gray-700 dark:hover:text-gray-200 active:scale-90 transition-all duration-200"
           >
             <PanelLeftClose className="w-4 h-4" />
           </button>
@@ -157,7 +157,7 @@ export function SceneSidebar({
                 className={cn(
                   'group relative rounded-lg transition-all duration-200 cursor-pointer flex flex-col gap-1 p-1.5',
                   isActive
-                    ? 'bg-purple-50 dark:bg-purple-900/20 ring-1 ring-purple-200 dark:ring-purple-700'
+                    ? 'bg-indigo-50 dark:bg-indigo-900/20 ring-1 ring-indigo-200 dark:ring-indigo-700'
                     : 'hover:bg-gray-50/80 dark:hover:bg-gray-800/50',
                 )}
               >
@@ -166,9 +166,9 @@ export function SceneSidebar({
                   <div className="flex items-center gap-2 max-w-full">
                     <span
                       className={cn(
-                        'text-[10px] font-black w-4 h-4 rounded-full flex items-center justify-center shrink-0',
+                        'text-xs font-black w-4 h-4 rounded-full flex items-center justify-center shrink-0',
                         isActive
-                          ? 'bg-purple-600 dark:bg-purple-500 text-white shadow-sm shadow-purple-500/30'
+                          ? 'bg-indigo-600 dark:bg-indigo-500 text-white shadow-sm shadow-indigo-500/30'
                           : 'bg-gray-100 dark:bg-gray-700 text-gray-500 dark:text-gray-400',
                       )}
                     >
@@ -178,7 +178,7 @@ export function SceneSidebar({
                       className={cn(
                         'text-xs font-bold truncate transition-colors',
                         isActive
-                          ? 'text-purple-700 dark:text-purple-300'
+                          ? 'text-indigo-700 dark:text-indigo-300'
                           : 'text-gray-600 dark:text-gray-300 group-hover:text-gray-900 dark:group-hover:text-gray-100',
                       )}
                     >
@@ -296,7 +296,7 @@ export function SceneSidebar({
                       /* Fallback */
                       <div className="w-full h-full flex flex-col items-center justify-center gap-1 bg-gray-50 dark:bg-gray-800 text-gray-300 dark:text-gray-500">
                         <Icon className="w-4 h-4" />
-                        <span className="text-[9px] font-bold uppercase tracking-wider opacity-80">
+                        <span className="text-xs font-bold uppercase tracking-wider opacity-80">
                           {scene.type}
                         </span>
                       </div>
@@ -305,9 +305,9 @@ export function SceneSidebar({
                     {isSlide && (
                       <div
                         className={cn(
-                          'absolute inset-0 bg-purple-500/0 transition-colors',
+                          'absolute inset-0 bg-indigo-500/0 transition-colors',
                           isActive
-                            ? 'bg-purple-500/0'
+                            ? 'bg-indigo-500/0'
                             : 'group-hover:bg-black/5 dark:group-hover:bg-white/5',
                         )}
                       />
@@ -346,7 +346,7 @@ export function SceneSidebar({
                     !isFailed && !isActive && 'opacity-60',
                     isActive &&
                       !isFailed &&
-                      'bg-purple-50 dark:bg-purple-900/20 ring-1 ring-purple-200 dark:ring-purple-700 opacity-100',
+                      'bg-indigo-50 dark:bg-indigo-900/20 ring-1 ring-indigo-200 dark:ring-indigo-700 opacity-100',
                   )}
                 >
                   {/* Scene Header */}
@@ -354,9 +354,9 @@ export function SceneSidebar({
                     <div className="flex items-center gap-2 max-w-full">
                       <span
                         className={cn(
-                          'text-[10px] font-black w-4 h-4 rounded-full flex items-center justify-center shrink-0',
+                          'text-xs font-black w-4 h-4 rounded-full flex items-center justify-center shrink-0',
                           isActive && !isFailed
-                            ? 'bg-purple-600 dark:bg-purple-500 text-white shadow-sm shadow-purple-500/30'
+                            ? 'bg-indigo-600 dark:bg-indigo-500 text-white shadow-sm shadow-indigo-500/30'
                             : 'bg-gray-100 dark:bg-gray-700 text-gray-400 dark:text-gray-500',
                         )}
                       >
@@ -366,7 +366,7 @@ export function SceneSidebar({
                         className={cn(
                           'text-xs font-bold truncate transition-colors',
                           isActive && !isFailed
-                            ? 'text-purple-700 dark:text-purple-300'
+                            ? 'text-indigo-700 dark:text-indigo-300'
                             : isFailed
                               ? 'text-gray-700 dark:text-gray-200'
                               : 'text-gray-400 dark:text-gray-500',
@@ -426,7 +426,7 @@ export function SceneSidebar({
                               !isPaused && 'animate-pulse',
                             )}
                           />
-                          <span className="text-[9px] font-medium text-gray-400 dark:text-gray-500 mt-0.5">
+                          <span className="text-xs font-medium text-gray-400 dark:text-gray-500 mt-0.5">
                             {isPaused ? t('stage.paused') : t('stage.generating')}
                           </span>
                         </>

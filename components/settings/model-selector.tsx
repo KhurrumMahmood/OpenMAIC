@@ -228,7 +228,7 @@ export function ModelSelector({
                     {provider.isServerConfigured && (
                       <span
                         className={cn(
-                          'text-[10px] px-1 py-0 h-4 leading-4 rounded shrink-0 inline-block',
+                          'text-xs px-1 py-0 h-4 leading-4 rounded shrink-0 inline-block',
                           isActive
                             ? 'bg-white/20 text-primary-foreground'
                             : 'bg-muted text-muted-foreground',
@@ -335,7 +335,7 @@ export function ModelSelector({
                               {model.contextWindow && (
                                 <span className="flex items-center gap-0.5">
                                   <FileText className="h-3 w-3" />
-                                  <span className="text-[10px]">
+                                  <span className="text-xs">
                                     {formatContextWindow(model.contextWindow)}
                                   </span>
                                 </span>
@@ -344,7 +344,7 @@ export function ModelSelector({
                               {model.outputWindow && (
                                 <span className="flex items-center gap-0.5">
                                   <Send className="h-3 w-3" />
-                                  <span className="text-[10px]">
+                                  <span className="text-xs">
                                     {formatContextWindow(model.outputWindow)}
                                   </span>
                                 </span>

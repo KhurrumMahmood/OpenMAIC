@@ -106,7 +106,7 @@ export function ChatPanel({
 
       {/* Input */}
       <div className="border-t p-3">
-        <div className="flex items-center gap-2 text-[10px] text-muted-foreground mb-2">
+        <div className="flex items-center gap-2 text-xs text-muted-foreground mb-2">
           <span>{t('pbl.chat.mentionHint')}</span>
         </div>
         <div className="flex gap-2 items-center">
@@ -165,7 +165,7 @@ function ChatMessage({ message, isUser }: { message: PBLChatMessage; isUser: boo
 
   return (
     <div className={`flex flex-col ${isUser ? 'items-end' : 'items-start'}`}>
-      <span className="text-[10px] font-medium text-muted-foreground mb-0.5 px-1">
+      <span className="text-xs font-medium text-muted-foreground mb-0.5 px-1">
         {message.agent_name}
       </span>
       <div

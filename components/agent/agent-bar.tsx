@@ -107,7 +107,7 @@ export function AgentBar() {
               </div>
             )}
           </div>
-          <Shuffle className="size-4 text-violet-400 dark:text-violet-500" />
+          <Shuffle className="size-4 text-indigo-400 dark:text-indigo-500" />
         </>
       ) : (
         <>
@@ -128,7 +128,7 @@ export function AgentBar() {
               ))}
               {nonTeacherSelected.length > 4 && (
                 <div className="size-6 rounded-full bg-muted ring-[1.5px] ring-background flex items-center justify-center">
-                  <span className="text-[9px] font-bold text-muted-foreground">
+                  <span className="text-xs font-bold text-muted-foreground">
                     +{nonTeacherSelected.length - 4}
                   </span>
                 </div>
@@ -245,7 +245,7 @@ export function AgentBar() {
                           <div className="flex-1 min-w-0">
                             <div className="text-sm font-medium flex items-center gap-1.5">
                               {getAgentName(agent)}
-                              <span className="text-[10px] text-muted-foreground/50 font-normal">
+                              <span className="text-xs text-muted-foreground/50 font-normal">
                                 {getAgentRole(agent)}
                               </span>
                             </div>
@@ -269,11 +269,11 @@ export function AgentBar() {
                   {/* Shuffle icon with ambient animation */}
                   <div className="relative flex items-center justify-center">
                     {/* Ping ripple */}
-                    <div className="absolute size-12 rounded-full bg-violet-400/10 dark:bg-violet-400/15 animate-ping [animation-duration:3s]" />
+                    <div className="absolute size-12 rounded-full bg-indigo-400/10 dark:bg-indigo-400/15 animate-ping [animation-duration:3s]" />
                     {/* Soft glow ring */}
-                    <div className="absolute size-14 rounded-full bg-violet-400/5 dark:bg-violet-400/10 animate-pulse [animation-duration:2.5s]" />
+                    <div className="absolute size-14 rounded-full bg-indigo-400/5 dark:bg-indigo-400/10 animate-pulse [animation-duration:2.5s]" />
                     {/* Icon */}
-                    <Shuffle className="relative size-7 text-violet-400 dark:text-violet-500" />
+                    <Shuffle className="relative size-7 text-indigo-400 dark:text-indigo-500" />
                   </div>
                   <p className="text-xs text-muted-foreground text-center">
                     {t('settings.agentModeAutoDesc')}

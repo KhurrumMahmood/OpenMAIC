@@ -178,12 +178,12 @@ export const ProactiveCard = ({
             )}
             <div className="flex items-center gap-1.5 flex-1 min-w-0">
               {agentName && (
-                <span className="text-[11px] font-semibold text-gray-700 dark:text-gray-300 truncate">
+                <span className="text-xs font-semibold text-gray-700 dark:text-gray-300 truncate">
                   {agentName}
                 </span>
               )}
               <span
-                className="text-[9px] font-black uppercase tracking-widest px-1.5 py-0.5 rounded-full shrink-0"
+                className="text-xs font-black uppercase tracking-widest px-1.5 py-0.5 rounded-full shrink-0"
                 style={{
                   color: agentColor || '#d97706',
                   backgroundColor: agentColor ? `${agentColor}18` : 'rgba(217, 119, 6, 0.08)',
@@ -193,7 +193,7 @@ export const ProactiveCard = ({
               </span>
             </div>
             <span
-              className={`text-[10px] font-bold tabular-nums shrink-0 ${
+              className={`text-xs font-bold tabular-nums shrink-0 ${
                 isPaused ? 'text-gray-300 dark:text-gray-600' : 'text-gray-400 dark:text-gray-500'
               }`}
             >
@@ -211,7 +211,7 @@ export const ProactiveCard = ({
                 e.stopPropagation();
                 onListen();
               }}
-              className="flex-1 py-2 bg-gradient-to-r from-amber-400 to-amber-500 hover:from-amber-500 hover:to-amber-600 dark:from-amber-500 dark:to-amber-600 dark:hover:from-amber-600 dark:hover:to-amber-700 text-white text-[11px] font-black rounded-lg flex items-center justify-center gap-1.5 transition-all active:scale-[0.97] shadow-sm shadow-amber-200/50 dark:shadow-amber-800/50"
+              className="flex-1 py-2 bg-gradient-to-r from-amber-400 to-amber-500 hover:from-amber-500 hover:to-amber-600 dark:from-amber-500 dark:to-amber-600 dark:hover:from-amber-600 dark:hover:to-amber-700 text-white text-xs font-black rounded-lg flex items-center justify-center gap-1.5 transition-all active:scale-[0.97] shadow-sm shadow-amber-200/50 dark:shadow-amber-800/50"
             >
               <Play className="w-3 h-3 fill-current" /> {t('proactiveCard.join')}
             </button>

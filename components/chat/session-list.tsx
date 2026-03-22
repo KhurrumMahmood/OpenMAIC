@@ -19,7 +19,7 @@ interface SessionListProps {
 const sessionBadgeStyles = {
   qa: 'bg-blue-100 text-blue-700 dark:bg-blue-900/30 dark:text-blue-300',
   discussion: 'bg-amber-100 text-amber-700 dark:bg-amber-900/30 dark:text-amber-300',
-  lecture: 'bg-purple-100 text-purple-700 dark:bg-purple-900/30 dark:text-purple-300',
+  lecture: 'bg-indigo-100 text-indigo-700 dark:bg-indigo-900/30 dark:text-indigo-300',
 };
 
 // Labels are provided via i18n in the component
@@ -54,7 +54,7 @@ export function SessionList({
         const isActive = session.status === 'active';
         const dotColor =
           session.type === 'lecture'
-            ? 'bg-purple-500'
+            ? 'bg-indigo-500'
             : session.type === 'qa'
               ? 'bg-blue-500'
               : 'bg-amber-500';
@@ -65,7 +65,7 @@ export function SessionList({
             className={cn(
               'rounded-xl border transition-all duration-500 overflow-hidden',
               isActive
-                ? 'border-purple-200 dark:border-purple-700 bg-purple-50/30 dark:bg-purple-900/20 shadow-sm'
+                ? 'border-indigo-200 dark:border-indigo-700 bg-indigo-50/30 dark:bg-indigo-900/20 shadow-sm'
                 : 'border-gray-100 dark:border-gray-800 bg-white/50 dark:bg-gray-800/50',
             )}
           >
@@ -93,13 +93,13 @@ export function SessionList({
               >
                 {t(`chat.badge.${session.type}`)}
               </span>
-              <span className="flex-1 text-[11px] font-semibold text-gray-700 dark:text-gray-300 truncate">
+              <span className="flex-1 text-xs font-semibold text-gray-700 dark:text-gray-300 truncate">
                 {session.title}
               </span>
-              <div className="flex items-center gap-1 text-[9px] text-gray-400 dark:text-gray-500">
+              <div className="flex items-center gap-1 text-xs text-gray-400 dark:text-gray-500">
                 {getStatusIcon(session.status)}
               </div>
-              <span className="text-[9px] text-gray-400 dark:text-gray-500 font-medium tabular-nums shrink-0">
+              <span className="text-xs text-gray-400 dark:text-gray-500 font-medium tabular-nums shrink-0">
                 {session.messages.length}
               </span>
               <ChevronDown

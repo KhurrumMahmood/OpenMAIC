@@ -91,7 +91,7 @@ const MessageBubble = memo(function MessageBubble({
           className={cn(
             'w-1.5 h-1.5 rounded-full animate-pulse',
             isTeacher
-              ? 'bg-purple-400/70 dark:bg-purple-500/70'
+              ? 'bg-indigo-400/70 dark:bg-indigo-500/70'
               : 'bg-indigo-400/70 dark:bg-indigo-500/70',
           )}
         />
@@ -99,7 +99,7 @@ const MessageBubble = memo(function MessageBubble({
           className={cn(
             'w-1.5 h-1.5 rounded-full animate-pulse',
             isTeacher
-              ? 'bg-purple-400/70 dark:bg-purple-500/70'
+              ? 'bg-indigo-400/70 dark:bg-indigo-500/70'
               : 'bg-indigo-400/70 dark:bg-indigo-500/70',
           )}
           style={{ animationDelay: '200ms' }}
@@ -108,7 +108,7 @@ const MessageBubble = memo(function MessageBubble({
           className={cn(
             'w-1.5 h-1.5 rounded-full animate-pulse',
             isTeacher
-              ? 'bg-purple-400/70 dark:bg-purple-500/70'
+              ? 'bg-indigo-400/70 dark:bg-indigo-500/70'
               : 'bg-indigo-400/70 dark:bg-indigo-500/70',
           )}
           style={{ animationDelay: '400ms' }}
@@ -129,7 +129,7 @@ const MessageBubble = memo(function MessageBubble({
       className={cn(
         'inline-block px-2.5 py-1.5 rounded-xl text-[12px] leading-relaxed max-w-full text-left transition-shadow duration-300',
         isUser
-          ? 'bg-gradient-to-br from-purple-600 to-purple-700 dark:from-purple-500 dark:to-purple-600 text-white rounded-tr-sm shadow-sm shadow-purple-300/30 dark:shadow-purple-900/50 ring-1 ring-purple-500/20'
+          ? 'bg-gradient-to-br from-indigo-600 to-indigo-700 dark:from-indigo-500 dark:to-indigo-600 text-white rounded-tr-sm shadow-sm shadow-indigo-300/30 dark:shadow-indigo-900/50 ring-1 ring-indigo-500/20'
           : isTeacher
             ? 'bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-200 border border-gray-100 dark:border-gray-700 rounded-tl-sm shadow-sm'
             : 'bg-indigo-50 dark:bg-indigo-900/20 text-indigo-900 dark:text-indigo-200 border border-indigo-100/50 dark:border-indigo-800/50 rounded-tl-sm',
@@ -233,7 +233,7 @@ export function ChatSessionComponent({
   if (session.messages.length === 0 && !isActive) {
     return (
       <div className="h-20 flex items-center justify-center text-center px-2">
-        <p className="text-[10px] text-gray-400 dark:text-gray-500">{t('chat.noMessages')}</p>
+        <p className="text-xs text-gray-400 dark:text-gray-500">{t('chat.noMessages')}</p>
       </div>
     );
   }
@@ -296,7 +296,7 @@ export function ChatSessionComponent({
                 'flex gap-2 px-1.5 py-1 rounded-lg border-l-[3px] border-l-transparent transition-[background-color,border-color] duration-300',
                 isUser && 'flex-row-reverse',
                 isActiveBubble &&
-                  'border-l-violet-500 dark:border-l-violet-400 bg-violet-50/50 dark:bg-violet-900/20',
+                  'border-l-indigo-500 dark:border-l-indigo-400 bg-indigo-50/50 dark:bg-indigo-900/20',
               )}
             >
               {/* Mini Avatar */}
@@ -308,11 +308,11 @@ export function ChatSessionComponent({
               <div className={cn('flex-1 min-w-0', isUser && 'text-right')}>
                 <span
                   className={cn(
-                    'text-[9px] font-bold uppercase tracking-wider block mb-0.5',
+                    'text-xs font-bold uppercase tracking-wider block mb-0.5',
                     isUser
-                      ? 'text-purple-500 dark:text-purple-400'
+                      ? 'text-indigo-500 dark:text-indigo-400'
                       : isTeacher
-                        ? 'text-purple-400 dark:text-purple-300'
+                        ? 'text-indigo-400 dark:text-indigo-300'
                         : 'text-indigo-400 dark:text-indigo-300',
                   )}
                 >
@@ -350,7 +350,7 @@ export function ChatSessionComponent({
               className="mx-3 mt-2 mb-1 flex items-center gap-2"
             >
               <div className="flex-1 h-px bg-gradient-to-r from-transparent via-gray-200 dark:via-gray-700 to-transparent" />
-              <span className="flex items-center gap-1 text-[9px] text-gray-400 dark:text-gray-500 font-medium">
+              <span className="flex items-center gap-1 text-xs text-gray-400 dark:text-gray-500 font-medium">
                 <CircleStop className="w-2.5 h-2.5" />
                 {t('chat.ended')}
               </span>
@@ -371,7 +371,7 @@ export function ChatSessionComponent({
             exit={{ opacity: 0, y: 5 }}
             whileHover={{ scale: 1.02 }}
             onClick={() => onEndSession(session.id)}
-            className="mt-2 mx-2 bg-red-50/80 dark:bg-red-900/20 backdrop-blur-md text-red-600 dark:text-red-400 border border-red-200/50 dark:border-red-800/50 px-3 py-1.5 rounded-full text-[11px] font-semibold flex items-center justify-center gap-1.5 transition-all shadow-sm hover:shadow-md"
+            className="mt-2 mx-2 bg-red-50/80 dark:bg-red-900/20 backdrop-blur-md text-red-600 dark:text-red-400 border border-red-200/50 dark:border-red-800/50 px-3 py-1.5 rounded-full text-xs font-semibold flex items-center justify-center gap-1.5 transition-all shadow-sm hover:shadow-md"
           >
             <span className="relative flex h-2 w-2">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 dark:bg-red-500 opacity-75"></span>

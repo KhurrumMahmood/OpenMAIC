@@ -151,7 +151,7 @@ export function CanvasToolbar({
             <LayoutList className="w-3.5 h-3.5" />
           </button>
         )}
-        <span className="text-[11px] text-gray-400 dark:text-gray-500 tabular-nums select-none font-medium">
+        <span className="text-xs text-gray-400 dark:text-gray-500 tabular-nums select-none font-medium">
           {currentSceneIndex + 1}
           <span className="opacity-35 mx-px">/</span>
           {scenesCount}
@@ -160,7 +160,7 @@ export function CanvasToolbar({
 
       {/* ── Center: unified playback controls ── */}
       <div className="flex-1 flex items-center justify-center min-w-0">
-        <div className="inline-flex items-center gap-0.5 bg-gray-100/60 dark:bg-gray-800/60 rounded-lg px-1 h-7">
+        <div className="inline-flex items-center gap-0.5 bg-gray-100/60 dark:bg-white/[0.04] rounded-lg px-1 h-7">
           {/* Volume with vertical popover slider */}
           {onToggleMute && (
             <div
@@ -195,7 +195,7 @@ export function CanvasToolbar({
                 )}
               >
                 <div className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg shadow-lg px-2 py-2.5 flex flex-col items-center gap-1.5">
-                  <span className="text-[10px] text-gray-400 dark:text-gray-500 tabular-nums font-medium select-none">
+                  <span className="text-xs text-gray-400 dark:text-gray-500 tabular-nums font-medium select-none">
                     {Math.round(effectiveVolume * 100)}
                   </span>
                   <input
@@ -215,10 +215,10 @@ export function CanvasToolbar({
                       'bg-gray-200 dark:bg-gray-600',
                       '[writing-mode:vertical-lr] [direction:rtl]',
                       '[&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:w-3 [&::-webkit-slider-thumb]:h-3',
-                      '[&::-webkit-slider-thumb]:rounded-full [&::-webkit-slider-thumb]:bg-violet-500 [&::-webkit-slider-thumb]:dark:bg-violet-400',
+                      '[&::-webkit-slider-thumb]:rounded-full [&::-webkit-slider-thumb]:bg-indigo-500 [&::-webkit-slider-thumb]:dark:bg-indigo-400',
                       '[&::-webkit-slider-thumb]:shadow-sm [&::-webkit-slider-thumb]:cursor-pointer',
                       '[&::-moz-range-thumb]:w-3 [&::-moz-range-thumb]:h-3',
-                      '[&::-moz-range-thumb]:rounded-full [&::-moz-range-thumb]:bg-violet-500 [&::-moz-range-thumb]:border-0',
+                      '[&::-moz-range-thumb]:rounded-full [&::-moz-range-thumb]:bg-indigo-500 [&::-moz-range-thumb]:border-0',
                     )}
                   />
                 </div>
@@ -238,10 +238,10 @@ export function CanvasToolbar({
                     className={cn(
                       'w-8 h-5 rounded flex items-center justify-center',
                       'transition-all duration-150 outline-none cursor-pointer',
-                      'text-[11px] font-semibold tabular-nums leading-none',
+                      'text-xs font-semibold tabular-nums leading-none',
                       'active:scale-90',
                       playbackSpeed !== 1
-                        ? 'text-violet-600 dark:text-violet-400 bg-violet-500/10 dark:bg-violet-400/10'
+                        ? 'text-indigo-600 dark:text-indigo-400 bg-indigo-500/10 dark:bg-indigo-400/10'
                         : 'text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-200',
                     )}
                     aria-label="Playback speed"
@@ -283,7 +283,7 @@ export function CanvasToolbar({
               className={cn(
                 'flex items-center gap-1.5 h-6 px-2.5 rounded-md',
                 'bg-red-500/10 dark:bg-red-400/10 text-red-600 dark:text-red-400',
-                'text-[11px] font-semibold whitespace-nowrap',
+                'text-xs font-semibold whitespace-nowrap',
                 'hover:bg-red-500/20 dark:hover:bg-red-400/20 active:scale-95 transition-all cursor-pointer',
               )}
               title={t('roundtable.stopDiscussion')}
@@ -301,7 +301,7 @@ export function CanvasToolbar({
                 ctrlBtn,
                 'w-7 h-6',
                 engineState === 'playing'
-                  ? 'text-violet-600 dark:text-violet-400'
+                  ? 'text-indigo-600 dark:text-indigo-400'
                   : 'text-gray-500 dark:text-gray-400',
               )}
               aria-label={engineState === 'playing' ? 'Pause' : 'Play'}
@@ -342,7 +342,7 @@ export function CanvasToolbar({
                       ctrlBtn,
                       'w-8 h-6',
                       autoPlayLecture
-                        ? 'text-violet-600 dark:text-violet-400'
+                        ? 'text-indigo-600 dark:text-indigo-400'
                         : 'text-gray-500 dark:text-gray-400',
                     )}
                     aria-label="Auto-play"
@@ -367,14 +367,14 @@ export function CanvasToolbar({
               ctrlBtn,
               'w-6 h-6',
               whiteboardOpen
-                ? 'text-violet-600 dark:text-violet-400'
+                ? 'text-indigo-600 dark:text-indigo-400'
                 : 'text-gray-500 dark:text-gray-400',
             )}
             title={whiteboardOpen ? t('whiteboard.minimize') : t('whiteboard.open')}
           >
             <PencilLine className="w-3.5 h-3.5" />
             {!whiteboardOpen && whiteboardElementCount > 0 && (
-              <span className="absolute top-0.5 right-0.5 w-1.5 h-1.5 bg-violet-500 dark:bg-violet-400 rounded-full" />
+              <span className="absolute top-0.5 right-0.5 w-1.5 h-1.5 bg-indigo-500 dark:bg-indigo-400 rounded-full" />
             )}
           </button>
         </div>

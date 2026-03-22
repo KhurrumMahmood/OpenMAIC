@@ -73,13 +73,13 @@ function IssueCard({ issue }: { issue: PBLIssue }) {
       <div className="flex items-start justify-between gap-2">
         <h3 className="font-medium text-sm leading-tight">{issue.title}</h3>
         <span
-          className={`text-[10px] font-medium px-1.5 py-0.5 rounded-full whitespace-nowrap ${statusBadgeColor}`}
+          className={`text-xs font-medium px-1.5 py-0.5 rounded-full whitespace-nowrap ${statusBadgeColor}`}
         >
           {statusLabel}
         </span>
       </div>
       <p className="text-xs text-muted-foreground mt-1 line-clamp-2">{issue.description}</p>
-      <div className="text-[10px] text-muted-foreground mt-1.5">{issue.person_in_charge}</div>
+      <div className="text-xs text-muted-foreground mt-1.5">{issue.person_in_charge}</div>
     </div>
   );
 }

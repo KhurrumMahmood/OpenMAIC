@@ -91,7 +91,7 @@ export function Header({ currentSceneTitle }: HeaderProps) {
             <ArrowLeft className="w-5 h-5" />
           </button>
           <div className="flex flex-col min-w-0">
-            <span className="text-[10px] uppercase tracking-widest font-bold text-gray-400 dark:text-gray-500 mb-0.5">
+            <span className="text-xs uppercase tracking-widest font-bold text-gray-400 dark:text-gray-500 mb-0.5">
               {t('stage.currentScene')}
             </span>
             <h1
@@ -103,7 +103,7 @@ export function Header({ currentSceneTitle }: HeaderProps) {
           </div>
         </div>
 
-        <div className="flex items-center gap-4 bg-white/60 dark:bg-gray-800/60 backdrop-blur-md px-2 py-1.5 rounded-full border border-gray-100/50 dark:border-gray-700/50 shadow-sm shrink-0">
+        <div className="flex items-center gap-4 bg-white/60 dark:bg-white/[0.04] backdrop-blur-md px-2 py-1.5 rounded-full border border-gray-100/50 dark:border-gray-700/50 shadow-sm shrink-0">
           {/* Language Selector */}
           <div className="relative" ref={languageRef}>
             <button
@@ -125,7 +125,7 @@ export function Header({ currentSceneTitle }: HeaderProps) {
                   className={cn(
                     'w-full px-4 py-2 text-left text-sm hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors',
                     locale === 'zh-CN' &&
-                      'bg-purple-50 dark:bg-purple-900/20 text-purple-600 dark:text-purple-400',
+                      'bg-indigo-50 dark:bg-indigo-900/20 text-indigo-600 dark:text-indigo-400',
                   )}
                 >
                   简体中文
@@ -138,7 +138,7 @@ export function Header({ currentSceneTitle }: HeaderProps) {
                   className={cn(
                     'w-full px-4 py-2 text-left text-sm hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors',
                     locale === 'en-US' &&
-                      'bg-purple-50 dark:bg-purple-900/20 text-purple-600 dark:text-purple-400',
+                      'bg-indigo-50 dark:bg-indigo-900/20 text-indigo-600 dark:text-indigo-400',
                   )}
                 >
                   English
@@ -172,7 +172,7 @@ export function Header({ currentSceneTitle }: HeaderProps) {
                   className={cn(
                     'w-full px-4 py-2 text-left text-sm hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors flex items-center gap-2',
                     theme === 'light' &&
-                      'bg-purple-50 dark:bg-purple-900/20 text-purple-600 dark:text-purple-400',
+                      'bg-indigo-50 dark:bg-indigo-900/20 text-indigo-600 dark:text-indigo-400',
                   )}
                 >
                   <Sun className="w-4 h-4" />
@@ -186,7 +186,7 @@ export function Header({ currentSceneTitle }: HeaderProps) {
                   className={cn(
                     'w-full px-4 py-2 text-left text-sm hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors flex items-center gap-2',
                     theme === 'dark' &&
-                      'bg-purple-50 dark:bg-purple-900/20 text-purple-600 dark:text-purple-400',
+                      'bg-indigo-50 dark:bg-indigo-900/20 text-indigo-600 dark:text-indigo-400',
                   )}
                 >
                   <Moon className="w-4 h-4" />
@@ -200,7 +200,7 @@ export function Header({ currentSceneTitle }: HeaderProps) {
                   className={cn(
                     'w-full px-4 py-2 text-left text-sm hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors flex items-center gap-2',
                     theme === 'system' &&
-                      'bg-purple-50 dark:bg-purple-900/20 text-purple-600 dark:text-purple-400',
+                      'bg-indigo-50 dark:bg-indigo-900/20 text-indigo-600 dark:text-indigo-400',
                   )}
                 >
                   <Monitor className="w-4 h-4" />
@@ -226,10 +226,10 @@ export function Header({ currentSceneTitle }: HeaderProps) {
             {needsSetup && (
               <>
                 <span className="absolute -top-0.5 -right-0.5 flex h-3 w-3">
-                  <span className="animate-setup-ping absolute inline-flex h-full w-full rounded-full bg-violet-400 opacity-75" />
-                  <span className="relative inline-flex rounded-full h-3 w-3 bg-violet-500" />
+                  <span className="animate-setup-ping absolute inline-flex h-full w-full rounded-full bg-indigo-400 opacity-75" />
+                  <span className="relative inline-flex rounded-full h-3 w-3 bg-indigo-500" />
                 </span>
-                <span className="animate-setup-float absolute top-full mt-2 right-0 whitespace-nowrap text-[11px] font-medium text-violet-600 dark:text-violet-400 bg-violet-50 dark:bg-violet-950/40 border border-violet-200 dark:border-violet-800/50 px-2 py-0.5 rounded-full shadow-sm pointer-events-none">
+                <span className="animate-setup-float absolute top-full mt-2 right-0 whitespace-nowrap text-xs font-medium text-indigo-600 dark:text-indigo-400 bg-indigo-50 dark:bg-indigo-950/40 border border-indigo-200 dark:border-indigo-800/50 px-2 py-0.5 rounded-full shadow-sm pointer-events-none">
                   {t('settings.setupNeeded')}
                 </span>
               </>
@@ -286,7 +286,7 @@ export function Header({ currentSceneTitle }: HeaderProps) {
                 <Package className="w-4 h-4 text-gray-400 shrink-0" />
                 <div>
                   <div>{t('export.resourcePack')}</div>
-                  <div className="text-[11px] text-gray-400 dark:text-gray-500">
+                  <div className="text-xs text-gray-400 dark:text-gray-500">
                     {t('export.resourcePackDesc')}
                   </div>
                 </div>

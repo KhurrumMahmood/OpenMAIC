@@ -324,7 +324,7 @@ export function MediaPopover({ onSettingsOpen }: MediaPopoverProps) {
           className={cn(
             'inline-flex items-center gap-1.5 rounded-full px-2.5 py-1 text-xs font-medium transition-all cursor-pointer select-none whitespace-nowrap border',
             enabledCount > 0
-              ? 'bg-violet-100 dark:bg-violet-900/30 text-violet-700 dark:text-violet-300 border-violet-200/60 dark:border-violet-700/50'
+              ? 'bg-indigo-100 dark:bg-indigo-900/30 text-indigo-700 dark:text-indigo-300 border-indigo-200/60 dark:border-indigo-700/50'
               : 'text-muted-foreground/70 hover:text-foreground hover:bg-muted/60 border-border/50',
           )}
         >
@@ -349,7 +349,7 @@ export function MediaPopover({ onSettingsOpen }: MediaPopoverProps) {
                   key={tab.id}
                   onClick={() => setActiveTab(tab.id)}
                   className={cn(
-                    'flex-1 flex items-center justify-center gap-1.5 py-1.5 rounded-md text-[11px] font-medium transition-all relative',
+                    'flex-1 flex items-center justify-center gap-1.5 py-1.5 rounded-md text-xs font-medium transition-all relative',
                     isActive
                       ? 'bg-background text-foreground shadow-sm'
                       : 'text-muted-foreground hover:text-foreground/80',
@@ -358,7 +358,7 @@ export function MediaPopover({ onSettingsOpen }: MediaPopoverProps) {
                   <Icon className="size-3.5" />
                   <span className="hidden sm:inline">{tab.label}</span>
                   {isEnabled && !isActive && (
-                    <span className="absolute top-1 right-1 size-1.5 rounded-full bg-violet-500" />
+                    <span className="absolute top-1 right-1 size-1.5 rounded-full bg-indigo-500" />
                   )}
                 </button>
               );
@@ -431,9 +431,9 @@ export function MediaPopover({ onSettingsOpen }: MediaPopoverProps) {
                 <button
                   onClick={handlePreview}
                   className={cn(
-                    'inline-flex items-center gap-1 rounded-md px-2 py-1.5 text-[11px] font-medium transition-all shrink-0',
+                    'inline-flex items-center gap-1 rounded-md px-2 py-1.5 text-xs font-medium transition-all shrink-0',
                     previewing
-                      ? 'bg-violet-100 dark:bg-violet-900/40 text-violet-700 dark:text-violet-300'
+                      ? 'bg-indigo-100 dark:bg-indigo-900/40 text-indigo-700 dark:text-indigo-300'
                       : 'bg-muted/60 text-muted-foreground hover:bg-muted hover:text-foreground',
                   )}
                 >
@@ -447,7 +447,7 @@ export function MediaPopover({ onSettingsOpen }: MediaPopoverProps) {
               </div>
               {ttsSpeedRange && (
                 <div className="flex items-center gap-2.5 mt-2.5">
-                  <span className="text-[10px] text-muted-foreground/60 shrink-0">
+                  <span className="text-xs text-muted-foreground/60 shrink-0">
                     {t('media.speed')}
                   </span>
                   <Slider
@@ -458,7 +458,7 @@ export function MediaPopover({ onSettingsOpen }: MediaPopoverProps) {
                     step={0.1}
                     className="flex-1"
                   />
-                  <span className="text-[10px] text-muted-foreground tabular-nums w-7 text-right">
+                  <span className="text-xs text-muted-foreground tabular-nums w-7 text-right">
                     {ttsSpeed.toFixed(1)}x
                   </span>
                 </div>
@@ -493,7 +493,7 @@ export function MediaPopover({ onSettingsOpen }: MediaPopoverProps) {
               setOpen(false);
               onSettingsOpen(activeTab);
             }}
-            className="w-full flex items-center justify-between px-3.5 py-2.5 text-[11px] text-muted-foreground/60 hover:text-muted-foreground transition-colors"
+            className="w-full flex items-center justify-between px-3.5 py-2.5 text-xs text-muted-foreground/60 hover:text-muted-foreground transition-colors"
           >
             <span>{t('toolbar.advancedSettings')}</span>
             <ChevronRight className="size-3" />
@@ -524,7 +524,7 @@ function TabPanel({
         <Icon
           className={cn(
             'size-4 shrink-0 transition-colors',
-            enabled ? 'text-violet-600 dark:text-violet-400' : 'text-muted-foreground/50',
+            enabled ? 'text-indigo-600 dark:text-indigo-400' : 'text-muted-foreground/50',
           )}
         />
         <span
@@ -600,7 +600,7 @@ function GroupedSelect({
           <Fragment key={`${group.groupId}-${i}`}>
             {i > 0 && <SelectSeparator />}
             <SelectGroup>
-              <SelectLabel className="flex items-center gap-1.5 text-[10px] font-semibold uppercase tracking-wider">
+              <SelectLabel className="flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wider">
                 {group.groupIcon && (
                   <img
                     src={group.groupIcon}

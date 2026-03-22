@@ -110,13 +110,13 @@ export function BaseVideoElement({ elementInfo }: BaseVideoElementProps) {
       >
         {showDisabled ? (
           <div className="w-full h-full bg-gray-50 dark:bg-gray-900/30 flex items-center justify-center rounded">
-            <div className="flex items-center gap-1 px-2 py-1 text-[10px] font-medium text-gray-500 dark:text-gray-400">
+            <div className="flex items-center gap-1 px-2 py-1 text-xs font-medium text-gray-500 dark:text-gray-400">
               <VideoOff className="w-3 h-3 shrink-0" />
               <span>{t('settings.mediaGenerationDisabled')}</span>
             </div>
           </div>
         ) : showSkeleton ? (
-          <div className="w-full h-full bg-gradient-to-br from-indigo-50 via-violet-50/60 to-blue-50 dark:from-indigo-950/40 dark:via-violet-950/30 dark:to-blue-950/20 flex items-center justify-center rounded">
+          <div className="w-full h-full bg-gradient-to-br from-indigo-50 via-indigo-50/60 to-blue-50 dark:from-indigo-950/40 dark:via-indigo-950/30 dark:to-blue-950/20 flex items-center justify-center rounded">
             <style>{`
               @keyframes vid-pulse-ring { 0%, 100% { opacity: 0.15; transform: scale(0.85); } 50% { opacity: 0.35; transform: scale(1.1); } }
             `}</style>
@@ -136,12 +136,12 @@ export function BaseVideoElement({ elementInfo }: BaseVideoElementProps) {
         ) : showError ? (
           <div className="w-full h-full bg-red-50 dark:bg-red-900/20 flex flex-col items-center justify-center gap-1.5 rounded">
             {task?.errorCode === 'CONTENT_SENSITIVE' ? (
-              <div className="flex items-center gap-1 px-2 py-1 text-[10px] font-medium text-amber-600 dark:text-amber-400">
+              <div className="flex items-center gap-1 px-2 py-1 text-xs font-medium text-amber-600 dark:text-amber-400">
                 <ShieldAlert className="w-3 h-3 shrink-0" />
                 <span>{t('settings.mediaContentSensitive')}</span>
               </div>
             ) : task?.errorCode === 'GENERATION_DISABLED' ? (
-              <div className="flex items-center gap-1 px-2 py-1 text-[10px] font-medium text-gray-500 dark:text-gray-400">
+              <div className="flex items-center gap-1 px-2 py-1 text-xs font-medium text-gray-500 dark:text-gray-400">
                 <VideoOff className="w-3 h-3 shrink-0" />
                 <span>{t('settings.mediaGenerationDisabled')}</span>
               </div>
@@ -152,7 +152,7 @@ export function BaseVideoElement({ elementInfo }: BaseVideoElementProps) {
                   retryMediaTask(elementInfo.src);
                 }}
                 onPointerDown={(e) => e.stopPropagation()}
-                className="flex items-center gap-1 px-2 py-1 text-[10px] font-medium text-red-600 dark:text-red-400 bg-red-100 dark:bg-red-900/40 rounded hover:bg-red-200 dark:hover:bg-red-900/60 transition-colors"
+                className="flex items-center gap-1 px-2 py-1 text-xs font-medium text-red-600 dark:text-red-400 bg-red-100 dark:bg-red-900/40 rounded hover:bg-red-200 dark:hover:bg-red-900/60 transition-colors"
               >
                 <RotateCcw className="w-3 h-3" />
                 {t('settings.mediaRetry')}

@@ -103,7 +103,7 @@ function ProviderListColumn<T extends string>({
             )}
             <span className="font-medium text-sm flex-1 truncate">{provider.name}</span>
             {configs[provider.id]?.isServerConfigured && (
-              <span className="text-[10px] px-1 py-0 h-4 leading-4 rounded shrink-0 bg-muted text-muted-foreground">
+              <span className="text-xs px-1 py-0 h-4 leading-4 rounded shrink-0 bg-muted text-muted-foreground">
                 {t('settings.serverConfigured')}
               </span>
             )}

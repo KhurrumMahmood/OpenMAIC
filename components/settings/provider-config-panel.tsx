@@ -343,7 +343,7 @@ export function ProviderConfigPanel({
                     {model.contextWindow && (
                       <span className="flex items-center gap-0.5">
                         <FileText className="h-3 w-3" />
-                        <span className="text-[10px]">
+                        <span className="text-xs">
                           {formatContextWindow(model.contextWindow)}
                         </span>
                       </span>
@@ -352,7 +352,7 @@ export function ProviderConfigPanel({
                     {model.outputWindow && (
                       <span className="flex items-center gap-0.5">
                         <Send className="h-3 w-3" />
-                        <span className="text-[10px]">
+                        <span className="text-xs">
                           {formatContextWindow(model.outputWindow)}
                         </span>
                       </span>

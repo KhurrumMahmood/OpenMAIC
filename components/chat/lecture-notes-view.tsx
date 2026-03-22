@@ -46,13 +46,13 @@ export function LectureNotesView({ notes, currentSceneId }: LectureNotesViewProp
   if (notes.length === 0) {
     return (
       <div className="h-full flex flex-col items-center justify-center text-center p-6">
-        <div className="w-12 h-12 bg-purple-50 dark:bg-purple-900/20 rounded-2xl flex items-center justify-center mb-3 text-purple-300 dark:text-purple-600 ring-1 ring-purple-100 dark:ring-purple-800/30">
+        <div className="w-12 h-12 bg-indigo-50 dark:bg-indigo-900/20 rounded-2xl flex items-center justify-center mb-3 text-indigo-300 dark:text-indigo-600 ring-1 ring-indigo-100 dark:ring-indigo-800/30">
           <BookOpen className="w-6 h-6" />
         </div>
         <p className="text-xs font-medium text-gray-500 dark:text-gray-400">
           {t('chat.lectureNotes.empty')}
         </p>
-        <p className="text-[10px] text-gray-400 dark:text-gray-500 mt-1">
+        <p className="text-xs text-gray-400 dark:text-gray-500 mt-1">
           {t('chat.lectureNotes.emptyHint')}
         </p>
       </div>
@@ -76,7 +76,7 @@ export function LectureNotesView({ notes, currentSceneId }: LectureNotesViewProp
             className={cn(
               'relative mb-3 last:mb-0 rounded-lg px-3 py-2.5 transition-colors duration-200',
               isCurrent
-                ? 'bg-purple-50/80 dark:bg-purple-950/25 ring-1 ring-purple-200/60 dark:ring-purple-700/30'
+                ? 'bg-indigo-50/80 dark:bg-indigo-950/25 ring-1 ring-indigo-200/60 dark:ring-indigo-700/30'
                 : 'bg-gray-50/50 dark:bg-gray-800/30',
             )}
           >
@@ -87,22 +87,22 @@ export function LectureNotesView({ notes, currentSceneId }: LectureNotesViewProp
                 className={cn(
                   'w-2 h-2 rounded-full shrink-0',
                   isCurrent
-                    ? 'bg-purple-500 dark:bg-purple-400 shadow-sm shadow-purple-400/40'
+                    ? 'bg-indigo-500 dark:bg-indigo-400 shadow-sm shadow-indigo-400/40'
                     : 'bg-gray-300 dark:bg-gray-600',
                 )}
               />
               <span
                 className={cn(
-                  'text-[10px] font-semibold tracking-wide',
+                  'text-xs font-semibold tracking-wide',
                   isCurrent
-                    ? 'text-purple-600 dark:text-purple-400'
+                    ? 'text-indigo-600 dark:text-indigo-400'
                     : 'text-gray-400 dark:text-gray-500',
                 )}
               >
                 {pageLabel}
               </span>
               {isCurrent && (
-                <span className="text-[9px] font-bold px-1.5 py-px rounded-full bg-purple-100 dark:bg-purple-900/40 text-purple-600 dark:text-purple-300">
+                <span className="text-xs font-bold px-1.5 py-px rounded-full bg-indigo-100 dark:bg-indigo-900/40 text-indigo-600 dark:text-indigo-300">
                   {t('chat.lectureNotes.currentPage')}
                 </span>
               )}
@@ -157,7 +157,7 @@ export function LectureNotesView({ notes, currentSceneId }: LectureNotesViewProp
                         className="my-1.5 flex items-start gap-1.5 rounded-md border border-amber-200/60 dark:border-amber-700/30 bg-amber-50/60 dark:bg-amber-900/10 px-2 py-1.5"
                       >
                         <MessageSquare className="w-3 h-3 text-amber-500 dark:text-amber-400 shrink-0 mt-0.5" />
-                        <span className="text-[11px] leading-snug text-amber-800 dark:text-amber-300">
+                        <span className="text-xs leading-snug text-amber-800 dark:text-amber-300">
                           {row.label}
                         </span>
                       </div>

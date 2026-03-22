@@ -158,7 +158,7 @@ export function CanvasArea({
                     {/* Spinner */}
                     <div className="relative w-12 h-12">
                       <div className="absolute inset-0 rounded-full border-2 border-gray-100 dark:border-gray-700" />
-                      <div className="absolute inset-0 rounded-full border-2 border-transparent border-t-purple-500 dark:border-t-purple-400 animate-spin" />
+                      <div className="absolute inset-0 rounded-full border-2 border-transparent border-t-indigo-500 dark:border-t-indigo-400 animate-spin" />
                     </div>
                     {/* Text */}
                     <motion.span
@@ -213,10 +213,10 @@ export function CanvasArea({
                         ease: 'easeInOut',
                       },
                     }}
-                    className="w-20 h-20 rounded-full bg-white/95 dark:bg-gray-800/95 flex items-center justify-center shadow-[0_4px_30px_rgba(147,51,234,0.15),inset_0_0_0_1px_rgba(233,213,255,0.5)] dark:shadow-[0_4px_30px_rgba(147,51,234,0.3),inset_0_0_0_1px_rgba(126,34,206,0.3)]"
+                    className="w-20 h-20 rounded-full bg-white/95 dark:bg-gray-800/95 flex items-center justify-center shadow-[0_4px_30px_rgba(99,102,241,0.15),inset_0_0_0_1px_rgba(199,210,254,0.5)] dark:shadow-[0_4px_30px_rgba(99,102,241,0.3),inset_0_0_0_1px_rgba(67,56,202,0.3)]"
                     style={{ willChange: 'transform' }}
                   >
-                    <Play className="w-7 h-7 text-purple-600 dark:text-purple-400 fill-purple-600/90 dark:fill-purple-400/90 ml-0.5" />
+                    <Play className="w-7 h-7 text-indigo-600 dark:text-indigo-400 fill-indigo-600/90 dark:fill-indigo-400/90 ml-0.5" />
                   </motion.div>
                 </motion.div>
               </motion.div>
@@ -230,7 +230,7 @@ export function CanvasArea({
         <CanvasToolbar
           className={cn(
             'shrink-0 h-9 px-2',
-            'bg-white/80 dark:bg-gray-800/80 backdrop-blur-xl',
+            'bg-white/80 dark:bg-white/[0.03] backdrop-blur-xl',
             'border-t border-gray-200/40 dark:border-gray-700/40',
           )}
           currentSceneIndex={currentSceneIndex}

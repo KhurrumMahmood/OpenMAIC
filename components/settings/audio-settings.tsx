@@ -588,7 +588,7 @@ export function AudioSettings({ onSave }: AudioSettingsProps = {}) {
                       )}
                       {getTTSProviderName(provider.id, t)}
                       {ttsProvidersConfig[provider.id]?.isServerConfigured && (
-                        <span className="text-[10px] px-1 py-0.5 rounded border text-muted-foreground">
+                        <span className="text-xs px-1 py-0.5 rounded border text-muted-foreground">
                           {t('settings.serverConfigured')}
                         </span>
                       )}
@@ -960,7 +960,7 @@ export function AudioSettings({ onSave }: AudioSettingsProps = {}) {
                       )}
                       {getASRProviderName(provider.id, t)}
                       {asrProvidersConfig[provider.id]?.isServerConfigured && (
-                        <span className="text-[10px] px-1 py-0.5 rounded border text-muted-foreground">
+                        <span className="text-xs px-1 py-0.5 rounded border text-muted-foreground">
                           {t('settings.serverConfigured')}
                         </span>
                       )}

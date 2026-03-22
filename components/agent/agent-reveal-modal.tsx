@@ -253,13 +253,13 @@ export function AgentRevealModal({ agents, open, onClose, onAllRevealed }: Agent
                               {agent.name}
                             </h3>
                             <span
-                              className="inline-flex items-center gap-1 rounded-full px-2 py-px text-[10px] font-medium"
+                              className="inline-flex items-center gap-1 rounded-full px-2 py-px text-xs font-medium"
                               style={{
                                 color: agent.color,
                                 backgroundColor: `${agent.color}12`,
                               }}
                             >
-                              <span className="text-[9px]">{roleIcon}</span>
+                              <span className="text-xs">{roleIcon}</span>
                               {t(`settings.agentRoles.${agent.role}`)}
                             </span>
                           </div>
@@ -352,8 +352,8 @@ export function AgentRevealModal({ agents, open, onClose, onAllRevealed }: Agent
                             <path d="M10 0 L20 10 L10 20 L0 10 Z" fill="currentColor" />
                           </svg>
                           {/* Center icon */}
-                          <Sparkles className="size-9 text-purple-300/70" />
-                          <span className="mt-1.5 text-xl font-bold text-purple-200/60">?</span>
+                          <Sparkles className="size-9 text-indigo-300/70" />
+                          <span className="mt-1.5 text-xl font-bold text-indigo-200/60">?</span>
                         </div>
                       </div>
                     </div>

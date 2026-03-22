@@ -30,8 +30,8 @@ interface InlineActionTagProps {
 // ── Style tokens ──────────────────────────────────────────────
 
 const WB_STYLE =
-  'bg-violet-50 dark:bg-violet-500/15 border-violet-300/40 dark:border-violet-500/30 text-violet-600 dark:text-violet-300';
-const WB_ACCENT = 'bg-violet-500 dark:bg-violet-400';
+  'bg-indigo-50 dark:bg-indigo-500/15 border-indigo-300/40 dark:border-indigo-500/30 text-indigo-600 dark:text-indigo-300';
+const WB_ACCENT = 'bg-indigo-500 dark:bg-indigo-400';
 
 const SPOTLIGHT_STYLE =
   'bg-yellow-50 dark:bg-yellow-500/15 border-yellow-300/40 dark:border-yellow-500/30 text-yellow-700 dark:text-yellow-300';
@@ -90,7 +90,7 @@ export function InlineActionTag({ actionName, state }: InlineActionTagProps) {
     <span
       className={cn(
         'inline-flex items-center mx-1 rounded-full border align-middle leading-none whitespace-nowrap',
-        'text-[9px] font-bold tracking-wide',
+        'text-xs font-bold tracking-wide',
         // Slightly tighter padding when wb accent is present (accent provides left visual weight)
         isWb ? 'pl-0.5 pr-1.5 py-px' : 'px-1.5 py-px',
         style,
@@ -106,7 +106,7 @@ export function InlineActionTag({ actionName, state }: InlineActionTagProps) {
             WB_ACCENT,
           )}
         >
-          <PenLine className="w-[7px] h-[7px] text-white dark:text-violet-950" strokeWidth={2.5} />
+          <PenLine className="w-[7px] h-[7px] text-white dark:text-indigo-950" strokeWidth={2.5} />
         </span>
       )}
 
