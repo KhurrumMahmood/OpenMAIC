@@ -15,7 +15,8 @@ export type BuiltInProviderId =
   | 'minimax'
   | 'glm'
   | 'siliconflow'
-  | 'doubao';
+  | 'doubao'
+  | 'openai-compatible';
 
 /**
  * Provider ID (built-in or custom)

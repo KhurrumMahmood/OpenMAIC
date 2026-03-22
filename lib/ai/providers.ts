@@ -837,6 +837,15 @@ export const PROVIDERS: Record<ProviderId, ProviderConfig> = {
       },
     ],
   },
+
+  'openai-compatible': {
+    id: 'openai-compatible',
+    name: 'OpenAI Compatible',
+    type: 'openai',
+    requiresApiKey: true,
+    icon: '/logos/openai.svg',
+    models: [],
+  },
 };
 
 /**

@@ -708,10 +708,22 @@ export const useSettingsStore = create<SettingsState>()(
                 const key = pid as ProviderId;
                 if (newProvidersConfig[key]) {
                   const currentModels = newProvidersConfig[key].models;
-                  // When server specifies allowed models, filter the models list
-                  const filteredModels = info.models?.length
-                    ? currentModels.filter((m) => info.models!.includes(m.id))
-                    : currentModels;
+                  // When server specifies allowed models, filter the models list.
+                  // If the provider has no built-in models (e.g. openai-compatible),
+                  // create ModelInfo entries from the server model IDs instead.
+                  let filteredModels = currentModels;
+                  if (info.models?.length) {
+                    const matched = currentModels.filter((m) => info.models!.includes(m.id));
+                    if (matched.length > 0 || currentModels.length > 0) {
+                      filteredModels = matched;
+                    } else {
+                      filteredModels = info.models.map((id) => ({
+                        id,
+                        name: id,
+                        capabilities: { streaming: true, tools: true, vision: true },
+                      }));
+                    }
+                  }
                   newProvidersConfig[key] = {
                     ...newProvidersConfig[key],
                     isServerConfigured: true,
