@@ -244,9 +244,18 @@ export function Roundtable({
   // Much easier than clicking the small bubble during fast text streaming
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
-      // Skip when user is typing in an input, textarea, or contentEditable
-      const tag = (e.target as HTMLElement).tagName;
-      if (tag === 'INPUT' || tag === 'TEXTAREA' || (e.target as HTMLElement).isContentEditable) {
+      // Skip when user is interacting with a focusable/interactive element
+      const target = e.target as HTMLElement;
+      const tag = target.tagName;
+      if (
+        tag === 'INPUT' ||
+        tag === 'TEXTAREA' ||
+        tag === 'BUTTON' ||
+        tag === 'SELECT' ||
+        tag === 'SUMMARY' ||
+        target.isContentEditable ||
+        target.closest('[role="button"]')
+      ) {
         return;
       }
       if (e.code !== 'Space') return;

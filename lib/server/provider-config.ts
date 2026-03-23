@@ -128,9 +128,9 @@ function loadEnvSection(
   // First, add everything from YAML as defaults
   if (yamlSection) {
     for (const [id, entry] of Object.entries(yamlSection)) {
-      if (entry?.apiKey) {
+      if (entry?.apiKey || entry?.baseUrl || entry?.models?.length) {
         result[id] = {
-          apiKey: entry.apiKey,
+          apiKey: entry.apiKey || '',
           baseUrl: entry.baseUrl,
           models: entry.models,
           proxy: entry.proxy,
@@ -159,9 +159,9 @@ function loadEnvSection(
       continue;
     }
 
-    if (!envApiKey) continue;
+    if (!envApiKey && !envBaseUrl && !envModels) continue;
     result[providerId] = {
-      apiKey: envApiKey,
+      apiKey: envApiKey || '',
       baseUrl: envBaseUrl,
       models: envModels,
     };

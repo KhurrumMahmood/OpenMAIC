@@ -40,7 +40,9 @@ interface OpenRouterResponse {
 }
 
 /**
- * Lightweight connectivity test -- lists models to validate API key.
+ * Connectivity test — uses the authenticated /auth/key endpoint to validate
+ * the API key. The /models endpoint is public and would return 200 even with
+ * an invalid key.
  */
 export async function testOpenRouterConnectivity(
   config: ImageGenerationConfig,
@@ -49,7 +51,7 @@ export async function testOpenRouterConnectivity(
   const model = config.model || DEFAULT_MODEL;
 
   try {
-    const response = await fetch(`${baseUrl}/models`, {
+    const response = await fetch(`${baseUrl}/auth/key`, {
       method: 'GET',
       headers: {
         Authorization: `Bearer ${config.apiKey}`,
@@ -96,6 +98,9 @@ export async function generateWithOpenRouter(
       model,
       messages: [{ role: 'user', content: options.prompt }],
       modalities: ['image', 'text'],
+      ...(options.aspectRatio && {
+        image_config: { aspect_ratio: options.aspectRatio },
+      }),
     }),
   });
 

@@ -353,10 +353,15 @@ function ensureValidProviderSelections(state: Partial<SettingsState>): void {
 
   if (!hasProviderId(TTS_PROVIDERS, state.ttsProviderId)) {
     state.ttsProviderId = defaultAudioConfig.ttsProviderId;
+    state.ttsVoice = DEFAULT_TTS_VOICES[state.ttsProviderId] || defaultAudioConfig.ttsVoice;
   }
 
   if (!hasProviderId(ASR_PROVIDERS, state.asrProviderId)) {
     state.asrProviderId = defaultAudioConfig.asrProviderId;
+    const supportedLangs = ASR_PROVIDERS[state.asrProviderId]?.supportedLanguages || [];
+    if (!supportedLangs.includes(state.asrLanguage as string)) {
+      state.asrLanguage = supportedLangs[0] || 'auto';
+    }
   }
 }
 
