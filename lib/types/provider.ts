@@ -16,6 +16,7 @@ export type BuiltInProviderId =
   | 'glm'
   | 'siliconflow'
   | 'doubao'
+  | 'openrouter'
   | 'openai-compatible';
 
 /**

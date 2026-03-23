@@ -48,6 +48,7 @@ const LLM_ENV_MAP: Record<string, string> = {
   GLM: 'glm',
   SILICONFLOW: 'siliconflow',
   DOUBAO: 'doubao',
+  OPENROUTER: 'openrouter',
   CUSTOM: 'openai-compatible',
 };
 
@@ -72,6 +73,7 @@ const IMAGE_ENV_MAP: Record<string, string> = {
   IMAGE_SEEDREAM: 'seedream',
   IMAGE_QWEN_IMAGE: 'qwen-image',
   IMAGE_NANO_BANANA: 'nano-banana',
+  IMAGE_OPENROUTER: 'openrouter',
 };
 
 const VIDEO_ENV_MAP: Record<string, string> = {

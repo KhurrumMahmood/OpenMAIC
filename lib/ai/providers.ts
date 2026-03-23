@@ -838,6 +838,45 @@ export const PROVIDERS: Record<ProviderId, ProviderConfig> = {
     ],
   },
 
+  openrouter: {
+    id: 'openrouter',
+    name: 'OpenRouter',
+    type: 'openai',
+    defaultBaseUrl: 'https://openrouter.ai/api/v1',
+    requiresApiKey: true,
+    icon: '/logos/openrouter.svg',
+    models: [
+      {
+        id: 'google/gemini-2.5-flash',
+        name: 'Gemini 2.5 Flash',
+        contextWindow: 1048576,
+        outputWindow: 65536,
+        capabilities: { streaming: true, tools: true, vision: true },
+      },
+      {
+        id: 'anthropic/claude-sonnet-4',
+        name: 'Claude Sonnet 4',
+        contextWindow: 200000,
+        outputWindow: 64000,
+        capabilities: { streaming: true, tools: true, vision: true },
+      },
+      {
+        id: 'deepseek/deepseek-chat-v3-0324',
+        name: 'DeepSeek V3 0324',
+        contextWindow: 65536,
+        outputWindow: 8192,
+        capabilities: { streaming: true, tools: true },
+      },
+      {
+        id: 'meta-llama/llama-4-maverick',
+        name: 'Llama 4 Maverick',
+        contextWindow: 1048576,
+        outputWindow: 65536,
+        capabilities: { streaming: true, tools: true, vision: true },
+      },
+    ],
+  },
+
   'openai-compatible': {
     id: 'openai-compatible',
     name: 'OpenAI Compatible',
