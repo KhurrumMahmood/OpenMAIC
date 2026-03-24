@@ -114,12 +114,14 @@ railway logs -b -n 50          # Build logs
 railway logs -d -n 20          # Deployment/runtime logs
 ```
 
-- GitHub repo is connected — pushes to `main` should auto-deploy
-- If auto-deploy doesn't trigger, use `railway redeploy -y`
-- `railway up` (local upload) tends to time out — prefer `redeploy`
+- **Deploy with `railway up -d`** — uploads local code (~10MB with `.railwayignore`) and builds via Dockerfile
+- `.railwayignore` excludes `assets/` (68MB demo GIFs) — without it, uploads timeout and snapshots fail
+- GitHub auto-deploy is connected but unreliable on this fork — use `railway up -d` as the primary deploy method
+- `railway redeploy -y` only rebuilds from the last successful snapshot (won't pick up new commits)
 - Build uses multi-stage Dockerfile: deps → builder (`pnpm build`) → runner (`node server.js`)
 - Healthcheck: `/api/health`
 - Production port: 3000 (inside container; Railway maps externally)
+- Service is named `mathml2omml` in Railway (misleading — it's the main Next.js app)
 
 ## Configuration
 
