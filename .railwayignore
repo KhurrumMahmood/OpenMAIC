@@ -1,0 +1,6 @@
+assets/
+.claude/
+.worktrees/
+.github/
+*.md
+!README.md
