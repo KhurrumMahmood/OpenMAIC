@@ -103,6 +103,24 @@ Both built with Rollup, referenced as `workspace:*`, transpiled via `next.config
 
 Two locales: `zh-CN` (default), `en-US`. Simple key-value lookup via `translate(locale, key)`. React hook: `useI18n`. Translations split across domain files: `common`, `stage`, `chat`, `generation`, `settings`.
 
+## Deployment (Railway)
+
+Project `generous-analysis` on Railway. Dockerized build (`Dockerfile` + `railway.toml`).
+
+```bash
+railway service mathml2omml   # Link CLI to the service (misleading name — it's the main app)
+railway redeploy -y            # Trigger rebuild from latest commit
+railway logs -b -n 50          # Build logs
+railway logs -d -n 20          # Deployment/runtime logs
+```
+
+- GitHub repo is connected — pushes to `main` should auto-deploy
+- If auto-deploy doesn't trigger, use `railway redeploy -y`
+- `railway up` (local upload) tends to time out — prefer `redeploy`
+- Build uses multi-stage Dockerfile: deps → builder (`pnpm build`) → runner (`node server.js`)
+- Healthcheck: `/api/health`
+- Production port: 3000 (inside container; Railway maps externally)
+
 ## Configuration
 
 - `@/*` path alias maps to project root
