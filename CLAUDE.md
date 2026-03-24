@@ -5,7 +5,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 ## Commands
 
 ```bash
-pnpm dev          # Start dev server (Next.js 16 + Turbopack) at localhost:3000
+pnpm dev          # Start dev server (Next.js 16 + Turbopack) at localhost:4000
 pnpm build        # Production build (standalone output for non-Vercel)
 pnpm start        # Start production server
 pnpm lint         # ESLint

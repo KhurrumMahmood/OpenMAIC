@@ -122,13 +122,14 @@ function loadYamlFile(filename: string): YamlData {
 function loadEnvSection(
   envMap: Record<string, string>,
   yamlSection: Record<string, Partial<ServerProviderEntry>> | undefined,
+  keylessIds?: Set<string>,
 ): Record<string, ServerProviderEntry> {
   const result: Record<string, ServerProviderEntry> = {};
 
   // First, add everything from YAML as defaults
   if (yamlSection) {
     for (const [id, entry] of Object.entries(yamlSection)) {
-      if (entry?.apiKey || entry?.baseUrl || entry?.models?.length) {
+      if (entry?.apiKey || (keylessIds?.has(id) && (entry?.baseUrl || entry?.models?.length))) {
         result[id] = {
           apiKey: entry.apiKey || '',
           baseUrl: entry.baseUrl,
@@ -159,7 +160,10 @@ function loadEnvSection(
       continue;
     }
 
-    if (!envApiKey && !envBaseUrl && !envModels) continue;
+    // Providers that don't require API keys (e.g., Ollama via openai-compatible)
+    // can register with just a base URL or model list
+    const isKeyless = keylessIds?.has(providerId);
+    if (!envApiKey && !(isKeyless && (envBaseUrl || envModels))) continue;
     result[providerId] = {
       apiKey: envApiKey || '',
       baseUrl: envBaseUrl,
@@ -181,10 +185,10 @@ const _configs: Map<string, ServerConfig> = new Map();
 
 function buildConfig(yamlData: YamlData): ServerConfig {
   return {
-    providers: loadEnvSection(LLM_ENV_MAP, yamlData.providers),
+    providers: loadEnvSection(LLM_ENV_MAP, yamlData.providers, new Set(['openai-compatible'])),
     tts: loadEnvSection(TTS_ENV_MAP, yamlData.tts),
     asr: loadEnvSection(ASR_ENV_MAP, yamlData.asr),
-    pdf: loadEnvSection(PDF_ENV_MAP, yamlData.pdf),
+    pdf: loadEnvSection(PDF_ENV_MAP, yamlData.pdf, new Set(['unpdf', 'mineru'])),
     image: loadEnvSection(IMAGE_ENV_MAP, yamlData.image),
     video: loadEnvSection(VIDEO_ENV_MAP, yamlData.video),
     webSearch: loadEnvSection(WEB_SEARCH_ENV_MAP, yamlData['web-search']),

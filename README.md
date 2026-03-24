@@ -121,7 +121,7 @@ Supported providers: **OpenAI**, **Anthropic**, **Google Gemini**, **DeepSeek**,
 pnpm dev
 ```
 
-Open **http://localhost:3000** and start learning!
+Open **http://localhost:4000** and start learning!
 
 ### 4. Build for Production
 

@@ -250,7 +250,7 @@ switch (config.providerId) {
 
 ## 调试工具
 
-访问 http://localhost:3000/debug/pdf-parser 测试解析功能：
+访问 http://localhost:4000/debug/pdf-parser 测试解析功能：
 
 - 切换提供商（unpdf/MinerU）
 - 上传 PDF 文件
@@ -346,7 +346,7 @@ if (cached) {
 - **MinerU GitHub**: https://github.com/opendatalab/MinerU
 - **快速开始**: `/MINERU_QUICKSTART.md`
 - **变更说明**: `/MINERU_LOCAL_DEPLOYMENT.md`
-- **调试工具**: http://localhost:3000/debug/pdf-parser
+- **调试工具**: http://localhost:4000/debug/pdf-parser
 
 ---
 
