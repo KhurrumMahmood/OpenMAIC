@@ -139,7 +139,7 @@ export async function POST(req: NextRequest) {
           },
           signal,
           languageModel,
-          { enabled: false } satisfies ThinkingConfig,
+          undefined, // Let the model use its default thinking behavior
         );
 
         for await (const event of generator) {

@@ -178,8 +178,8 @@ export class StreamBuffer {
 
   constructor(callbacks: StreamBufferCallbacks, options?: StreamBufferOptions) {
     this.cb = callbacks;
-    this.tickMs = options?.tickMs ?? 30;
-    this.charsPerTick = options?.charsPerTick ?? 1;
+    this.tickMs = options?.tickMs ?? 16;
+    this.charsPerTick = options?.charsPerTick ?? 3;
     this.postTextDelayTicks = Math.ceil((options?.postTextDelayMs ?? 0) / this.tickMs);
     this.actionDelayTicks = Math.ceil((options?.actionDelayMs ?? 0) / this.tickMs);
   }
